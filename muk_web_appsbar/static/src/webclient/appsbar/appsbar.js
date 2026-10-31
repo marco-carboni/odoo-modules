@@ -31,4 +31,8 @@ export class AppsBar extends Component {
     _onAppClick(app) {
         return this.appMenuService.selectApp(app);
     }
+    get showSidebar() {
+        const apps = this.appMenuService.getAppsMenuItems();
+        return !(apps.length === 1 && apps[0].label === 'ALO');
+    }
 }
